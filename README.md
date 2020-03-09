@@ -2,103 +2,102 @@
 # Module 5 Final Project
 
 
-## Introduction
+##  Project Overview:
+This project is designed to explore machine learning models and methods for the task of classification. We've been tasked with finding a dataset with labeled data with at least 40,000 rows of data and 20 columns. We will generally follow the OSEMN process for a data science project, which includes:
 
-In this lesson, we'll review all the guidelines and specifications for the final project for Module 5.
-
-
-## Objectives
-
-* Understand all required aspects of the Final Project for Module 5
-* Understand all required deliverables
-* Understand what constitutes a successful project
-
-## Final Project Summary
-
-Congratulations! You've made it through another _intense_ module, and now you're ready to show off your newfound Machine Learning skills!
-
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-5-project/master/smart.gif)
-
-All that remains for Module 5 is to complete the final project!
-
-## The Project
-
-For this project, you're going to select a dataset of your choosing and create a classification model. You'll start by identifying a problem you can solve with classification, and then identify a dataset. You'll then use everything you've learned about Data Science and Machine Learning thus far to source a dataset, preprocess and explore it, and then build and interpret a classification model that answers your chosen question.
+* Obtaining the data
+* Scrubing (or cleaning) the data
+* Exploring and visualizing the data
+* Modeling
+* INterpreting the results
 
 
-### Selecting a Data Set
+**Project goal:** The data we will be using (more below) is a bank marketing data set. The goal for our project is to develop as model that predicts the success of a bank marketing campaign based on the features we have in out data. This model should therefore help us be better able to identify potential customers and refine our the focus of future campaigns.
 
-We encourage you to be very thoughtful when identifying your problem and selecting your data set--an overscoped project goal or a poor data set can quickly bring an otherwise promising project to a grinding halt.
+## Dataset - Bank Marketing Data Set
+###  Abstract:
+The data is related with direct marketing campaigns (phone calls) of a Portuguese banking institution. The classification goal is to predict if the client will subscribe a term deposit (variable y).
 
-To help you select an appropriate data set for this project, we've set some guidelines:
+###  Citation:
+This dataset is publicly available for research. The details are described in [Moro et al., 2014]. Please include this citation if you plan to use this database:
 
-1. Your dataset should work for classification. The classification task can be either binary or multiclass, as long as it's a classification model.   
+[Moro et al., 2014] S. Moro, P. Cortez and P. Rita. A Data-Driven Approach to Predict the Success of Bank Telemarketing. Decision Support Systems, In press, http://dx.doi.org/10.1016/j.dss.2014.03.001
 
-2. Your dataset needs to be of sufficient complexity. Try to avoid picking an overly simple dataset. Try to avoid extremely small datasets, as well as the most common datasets like titanic, iris, MNIST, etc. We want to see all the steps of the Data Science Process in this project--it's okay if the dataset is mostly clean, but we expect to see some preprocessing and exploration. See the following section, **_Data Set Constraints_**, for more information on this.   
+Available at: [pdf] http://dx.doi.org/10.1016/j.dss.2014.03.001 [bib] http://www3.dsi.uminho.pt/pcortez/bib/2014-dss.txt
 
-3. On the other end of the spectrum, don't pick a problem that's too complex, either. Stick to problems that you have a clear idea of how you can use machine learning to solve it. For now, we recommend you stay away from overly complex problems in the domains of Natural Language Processing or Computer Vision--although those domains make use of Supervised Learning, they come with a lot of other special requirements and techniques that you don't know yet (but you'll learn soon!). If you're chosen problem feels like you've overscoped, then it probably is. If you aren't sure if your problem scope is appropriate, double check with your instructor!  
+Link to data: https://archive.ics.uci.edu/ml/datasets/Bank+Marketing
 
-4. **_Serious Bonus Points_** if some or all of the data is data you have to source yourself through web scraping or interacting with a 3rd party API! Having projects that show off your ability to source data effectively make you look that much more impressive when showing your work off to potential employers!
+###  Input variables:
 
-### Data Set Constraints
+**Bank client data:**
 
-When selecting a data set, be sure to take into consideration the following constraints:
+age: (numeric)
+job: type of job (categorical: 'admin.','blue-collar','entrepreneur','housemaid','management','retired','self-employed','services','student','technician','unemployed','unknown')
+marital: marital status (categorical: 'divorced','married','single','unknown'; note: 'divorced' means divorced or widowed)
+education: (categorical: 'basic.4y','basic.6y','basic.9y','high.school','illiterate','professional.course','university.degree','unknown')
+default: has credit in default? (categorical: 'no','yes','unknown')
+housing: has housing loan? (categorical: 'no','yes','unknown')
+loan: has personal loan? (categorical: 'no','yes','unknown')
 
-1. Your data set can't be one we've already worked with in any labs.
-2. Your data set should contain a minimum of 1000 rows.    
-3. Your data set should contain a minimum of 10 predictor columns, before any one-hot encoding is performed.   
-4. Your instructor must provide final approval on your data set.
+**Related with the last contact of the current campaign:**
 
-### Problem First, or Data First?
+contact: contact communication type (categorical: 'cellular','telephone')
+month: last contact month of year (categorical: 'jan', 'feb', 'mar', ..., 'nov', 'dec')
+day_of_week: last contact day of the week (categorical: 'mon','tue','wed','thu','fri')
+duration: last contact duration, in seconds (numeric). Important note: this attribute highly affects the output target (e.g., if duration=0 then y='no'). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.
 
-There are two ways that you can about getting started: **_Problem-First_** or **_Data-First_**.
+**Other attributes:**
 
-**_Problem-First_**: Start with a problem that you want to solve with classification, and then try to find the data you need to solve it.  If you can't find any data to solve your problem, then you should pick another problem.
+campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
+pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric; 999 means client was not previously contacted)
+previous: number of contacts performed before this campaign and for this client (numeric)
+poutcome: outcome of the previous marketing campaign (categorical: 'failure','nonexistent','success')
 
-**_Data-First_**: Take a look at some of the most popular internet repositories of cool data sets we've listed below. If you find a data set that's particularly interesting for you, then it's totally okay to build your problem around that data set.
+**Social and economic context attributes:**
 
-There are plenty of amazing places that you can get your data from. We recommend you start looking at data sets in some of these resources first:
+emp.var.rate: employment variation rate - quarterly indicator (numeric)
+cons.price.idx: consumer price index - monthly indicator (numeric)
+cons.conf.idx: consumer confidence index - monthly indicator (numeric)
+euribor3m: euribor 3 month rate - daily indicator (numeric)
+nr.employed: number of employees - quarterly indicator (numeric)
+Output variable (desired target):
 
-* [UCI Machine Learning Datasets Repository](https://archive.ics.uci.edu/ml/datasets.html)
-* [Kaggle Datasets](https://www.kaggle.com/datasets)
-* [Awesome Datasets Repo on Github](https://github.com/awesomedata/awesome-public-datasets)
-* [New York City Open Data Portal](https://opendata.cityofnewyork.us/)
-* [Inside AirBNB ](http://insideairbnb.com/)
+**y** - has the client subscribed a term deposit? (binary: 'yes','no')
 
 
-## The Deliverables
+## Modeling
 
-For online students, your completed project should contain the following four deliverables:
+As this is a project for learning purposes, we're going to try out a lot of models. In this section we will work through
 
-1. A **_Jupyter Notebook_** containing any code you've written for this project. This work will need to be pushed to your GitHub repository in order to submit your project.
+**Logistic Regression
+K-Nearest Neighbors
+Decision Trees and Random Forest
+XGBoost
+Support Vector Machines (SVM)**
 
-2. An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository. 
+We'll also apply a grid search method to each to see if we can work through a range of hyper-parameters to find a what performs best. In short, we'll be doing a lot!
 
-3. A **_[Blog Post](https://github.com/learn-co-curriculum/dsc-welcome-blogging)_**.
+## Conclusions
 
-4. An **_"Executive Summary" PowerPoint Presentation_** that gives a brief overview of your problem/dataset, and each step of the OSEMN process.
+At this time our models do not perform well enough to implement them in the way we have explored
 
-Note: On-campus students may have different deliverables, please speak with your instructor.
+Although on the high end our models may allow us to significantly reduce costs:
 
-### Jupyter Notebook Must-Haves
+Our baseline campaign cost is as much as: $2,890,000
+The logreg model could save up to: $1,629,550
+The random forest model could save up to $1,758,475
+However, the potential drop in revenue is not offset:
 
-For this project, your Jupyter Notebook should meet the following specifications:
+Baseline revenue expectations are as high as $35,200,000
+The logreg model may allow us to miss up to: $-10,016,545
+The random forest model may allow us to miss up to $-14,107,786
+Due to it's better precision Random Forest was able to lower costs more significantly, but it also had a much higher False Negative rate, which given our scenario is ultimately more costly
 
-**_Organization/Code Cleanliness_**
+Logistic Regression appears to be the method of choice for this problem. Although we do not have it as tuned as we would like it to be, it consistently had the highest recall and therefore lowest false negative rate
 
-* The notebook should be well organized, easy to follow, and code is commented where appropriate.  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code. All functions have docstrings that act as professional-quality documentation.  
-* The notebook is written to technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.  
+**Next Steps and Recommendations:**
 
-**_Process, Methodology, and Findings_**
-
-* Your notebook should contain a clear record of your process and methodology for exploring and preprocessing your data, building and tuning a model, and interpreting your results.
-* We recommend you use the OSEMN process to help organize your thoughts and stay on track.
-
-### Blog Post Must-Haves
-
-Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging) for the technical requirements and blog ideas.
-
-## Grading Rubric 
-
-Online students can find a PDF of the grading rubric for the project [here](https://github.com/learn-co-curriculum/dsc-mod-5-project/blob/master/module5_project_rubric.pdf). _Note: On-campus students may have different requirements, please speak with your instructor._ 
+The current method of calling customers relies on a high volume of unproductive calls, and we should continue to work to find a method that helps reduce those
+We should look into the true cost of a campaign, if true costs are in fact 3-4 times higher, then many of our models may be in place to begin saving money now
+We should attempt to stack models to gain greater efficiency and potentially improve recall and precision
+greater data cleaning, feature transformation and feature engineering may help current models perform better on the margins
