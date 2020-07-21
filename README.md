@@ -49,22 +49,22 @@ Link to data: https://archive.ics.uci.edu/ml/datasets/Bank+Marketing
         <tr>
             <td>job</td>
             <td>categorical</td>
-            <td>'admin','blue-collar','entrepreneur','housemaid'</td>
+            <td>'admin', 'blue-collar', 'entrepreneur', 'housemaid'</td>
         </tr>
         <tr>
             <td>marital</td>
             <td>categorical</td>
-            <td>'divorced','married','single','unknown'</td>
+            <td>'divorced', 'married', 'single', 'unknown'</td>
         </tr>
         <tr>
             <td>education</td>
             <td>categorical</td>
-            <td>'basic.9y','high.school','illiterate','professional.course'</td>
+            <td>'basic.9y', 'high.school', 'illiterate', 'professional.course'</td>
         </tr>
         <tr>
             <td>credit_default</td>
             <td>categorical</td>
-            <td>'yes','no', 'unknown'</td>
+            <td>'yes', 'no', 'unknown'</td>
         </tr>
         <tr>
             <td>housing_loan</td>
@@ -93,18 +93,18 @@ Link to data: https://archive.ics.uci.edu/ml/datasets/Bank+Marketing
         </tr>
         <tr>
             <td>contact_type</td>
-            <td>categrical</td>
-            <td>'cellular','telephone'</td>
+            <td>categorical</td>
+            <td>'cellular', 'telephone'</td>
         </tr>
         <tr>
             <td>month</td>
             <td>categorical</td>
-            <td>'jan','feb','mar'</td>
+            <td>'jan', 'feb', 'mar'</td>
         </tr>
         <tr>
             <td>day_of_week</td>
             <td>categorical</td>
-            <td>'mon','tues','wed'</td>
+            <td>'mon', 'tues', 'wed'</td>
         </tr>
         <tr>
             <td>call_duration</td>
@@ -119,7 +119,7 @@ Link to data: https://archive.ics.uci.edu/ml/datasets/Bank+Marketing
         <tr>
             <td>p_days</td>
             <td>numeric</td>
-            <td>6 (number of days that passed by after the client was last contacted from a previous campaign (999 means client was not previously contacted)</td>
+            <td>number of days that passed by after the client was last contacted from a previous campaign: 6 (999 means client was not previously contacted)</td> 
         </tr>
         <tr>
             <td>poutcome</td>
@@ -128,8 +128,6 @@ Link to data: https://archive.ics.uci.edu/ml/datasets/Bank+Marketing
         </tr>      
     </tbody>
 </table>
-
-**Social and economic context attributes:**
 
 <table>
     <thead>
@@ -145,7 +143,7 @@ Link to data: https://archive.ics.uci.edu/ml/datasets/Bank+Marketing
         </tr>
         <tr>
             <td>employment_variation_rate</td>
-            <td>numeeric</td>
+            <td>numeric</td>
             <td>quarterly indicator of employement: 1.1</td>
         </tr>
         <tr>
