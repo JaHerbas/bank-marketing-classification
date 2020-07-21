@@ -27,53 +27,164 @@ Available at: [pdf] http://dx.doi.org/10.1016/j.dss.2014.03.001 [bib] http://www
 
 Link to data: https://archive.ics.uci.edu/ml/datasets/Bank+Marketing
 
-###  Input variables:
+###  Variables:
 
-**Bank client data:**
+<table>
+    <thead>
+        <tr>
+            <th colspan="5">Bank Client Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Variable</b></td>
+            <td><b>Datatype</b></td>
+            <td><b>Example</b></td>
+        </tr>
+        <tr>
+            <td>age</td>
+            <td>numeric</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>job</td>
+            <td>categorical</td>
+            <td>'admin','blue-collar','entrepreneur','housemaid'</td>
+        </tr>
+        <tr>
+            <td>marital</td>
+            <td>categorical</td>
+            <td>'divorced','married','single','unknown'</td>
+        </tr>
+        <tr>
+            <td>education</td>
+            <td>categorical</td>
+            <td>'basic.9y','high.school','illiterate','professional.course'</td>
+        </tr>
+        <tr>
+            <td>credit_default</td>
+            <td>categorical</td>
+            <td>'yes','no', 'unknown'</td>
+        </tr>
+        <tr>
+            <td>housing_loan</td>
+            <td>categorical</td>
+            <td>'yes','no','unknown'</td>
+        </tr>
+        <tr>
+            <td>personal_loan</td>
+            <td>categorical</td>
+            <td>'yes','no','unknown'</td>
+        </tr>
+    </tbody>
+</table>
 
-age: (numeric)
-job: type of job (categorical: 'admin.','blue-collar','entrepreneur','housemaid','management','retired','self-employed','services','student','technician','unemployed','unknown')
-marital: marital status (categorical: 'divorced','married','single','unknown'; note: 'divorced' means divorced or widowed)
-education: (categorical: 'basic.4y','basic.6y','basic.9y','high.school','illiterate','professional.course','university.degree','unknown')
-default: has credit in default? (categorical: 'no','yes','unknown')
-housing: has housing loan? (categorical: 'no','yes','unknown')
-loan: has personal loan? (categorical: 'no','yes','unknown')
-
-**Related with the last contact of the current campaign:**
-
-contact: contact communication type (categorical: 'cellular','telephone')
-month: last contact month of year (categorical: 'jan', 'feb', 'mar', ..., 'nov', 'dec')
-day_of_week: last contact day of the week (categorical: 'mon','tue','wed','thu','fri')
-duration: last contact duration, in seconds (numeric). Important note: this attribute highly affects the output target (e.g., if duration=0 then y='no'). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.
-
-**Other attributes:**
-
-campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
-pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric; 999 means client was not previously contacted)
-previous: number of contacts performed before this campaign and for this client (numeric)
-poutcome: outcome of the previous marketing campaign (categorical: 'failure','nonexistent','success')
+<table>
+    <thead>
+        <tr>
+            <th colspan="5">Campaign Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Variable</b></td>
+            <td><b>Datatype</b></td>
+            <td><b>Example</b></td>
+        </tr>
+        <tr>
+            <td>contact_type</td>
+            <td>categrical</td>
+            <td>'cellular','telephone'</td>
+        </tr>
+        <tr>
+            <td>month</td>
+            <td>categorical</td>
+            <td>'jan','feb','mar'</td>
+        </tr>
+        <tr>
+            <td>day_of_week</td>
+            <td>categorical</td>
+            <td>'mon','tues','wed'</td>
+        </tr>
+        <tr>
+            <td>call_duration</td>
+            <td>numeric</td>
+            <td>seconds: 240</td>
+        </tr>        
+        <tr>
+            <td>campaign</td>
+            <td>numeric</td>
+            <td>number of times customer called: 5</td>
+        </tr>
+        <tr>
+            <td>p_days</td>
+            <td>numeric</td>
+            <td>6 (number of days that passed by after the client was last contacted from a previous campaign (999 means client was not previously contacted)</td>
+        </tr>
+        <tr>
+            <td>poutcome</td>
+            <td>categorical</td>
+            <td>outcome of previous campaign: "failure","success","nonexistant"</td>
+        </tr>      
+    </tbody>
+</table>
 
 **Social and economic context attributes:**
 
-emp.var.rate: employment variation rate - quarterly indicator (numeric)
-cons.price.idx: consumer price index - monthly indicator (numeric)
-cons.conf.idx: consumer confidence index - monthly indicator (numeric)
-euribor3m: euribor 3 month rate - daily indicator (numeric)
-nr.employed: number of employees - quarterly indicator (numeric)
-Output variable (desired target):
+<table>
+    <thead>
+        <tr>
+            <th colspan="5">Social and Economic Context</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Variable</b></td>
+            <td><b>Datatype</b></td>
+            <td><b>Example</b></td>
+        </tr>
+        <tr>
+            <td>employment_variation_rate</td>
+            <td>numeeric</td>
+            <td>quarterly indicator of employement: 1.1</td>
+        </tr>
+        <tr>
+            <td>consumer_price_index</td>
+            <td>numeric</td>
+            <td>monthly indicator of consumer prices: 93.99</td>
+        </tr>
+        <tr>
+            <td>consumer_confidence_index</td>
+            <td>numeric</td>
+            <td>monthly indicator of consumer confidence: -36.4</td>
+        </tr>
+        <tr>
+            <td>euribor_3-month_rate</td>
+            <td>numeric</td>
+            <td>daily indicator of EURO interback lending rate: 4.857</td>
+        </tr>        
+        <tr>
+            <td>nr.employed</td>
+            <td>numeric</td>
+            <td>number of employees: 5191</td>
+        </tr>
+    </tbody>
+</table>
+
+**Output variable (desired target):**
 
 **y** - has the client subscribed a term deposit? (binary: 'yes','no')
 
 
 ## Modeling
 
-As this is a project for learning purposes, we're going to try out a lot of models. In this section we will work through
+As this is a project for learning purposes, we're going to try out a lot of models. In this section we will work through:
 
-**Logistic Regression
-K-Nearest Neighbors
-Decision Trees and Random Forest
-XGBoost
-Support Vector Machines (SVM)**
+* **Logistic Regression**
+* **K-Nearest Neighbors**
+* **Decision Trees and Random Forest**
+* **XGBoost**
+* **Support Vector Machines (SVM)**
 
 We'll also apply a grid search method to each to see if we can work through a range of hyper-parameters to find a what performs best. In short, we'll be doing a lot!
 
